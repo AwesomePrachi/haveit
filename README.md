@@ -5,8 +5,14 @@ The application includes both **User** and **Admin** interfaces, authentication 
 
 ---
 
+<<<<<<< HEAD
 ## 🎬 Demo
 
+=======
+## 🚀 Live Demo
+
+https://haveit-app.vercel.app
+>>>>>>> 046370e599994f39019be6dfd7e47f1bee6b58ec
 
 ---
 
@@ -126,4 +132,8 @@ App runs at [http://localhost:5173](http://localhost:5173)
 
 ---
 
+<<<<<<< HEAD
 ⭐ If you like this project, consider giving it a star on GitHub!
+=======
+⭐ If you like this project, consider giving it a star on GitHub!
+>>>>>>> 046370e599994f39019be6dfd7e47f1bee6b58ec
