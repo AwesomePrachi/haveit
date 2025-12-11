@@ -163,13 +163,13 @@ const Checkout = () => {
 
           <div className='w-full flex flex-col'>
             <p className='lg:text-xl text-lg font-bold lg:mt-10 mt-6 mb-5'>Select Payment Method</p>
-            <button className='py-4 px-4 flex items-center gap-5 border-t border-b border-gray-300 font-semibold' onClick={handleOnlinePayment}>
+            <button className='py-4 px-4 flex items-center gap-5 border-t border-b border-gray-300 font-semibold cursor-pointer' onClick={handleOnlinePayment}>
               <BsCreditCardFill size={19} className='text-deepBlue' />
               Credit/Debit/ATM Card
               <IoIosArrowForward size={18} className='ml-auto text-deepBlue' />
             </button>
-            <button className='py-4 px-4 flex items-center gap-5 border-b border-gray-300 font-semibold' onClick={handleCashOnDelivery}>
-              {/* <BsCurrencyRupee size={20} className='text-deepBlue border border-deepBlue' />  */}
+            <button className='py-4 px-4 flex items-center gap-5 border-b border-gray-300 font-semibold cursor-pointer' onClick={handleCashOnDelivery}>
+              {/* <BsCurrencyRupee size={20} className='text-deepBlue'/>  */}
               <img src={rupee} width={24} alt="" />
               Cash on Delivery
               <IoIosArrowForward size={18} className='ml-auto text-deepBlue' />
