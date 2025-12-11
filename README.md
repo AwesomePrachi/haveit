@@ -8,8 +8,9 @@ The application includes both **User** and **Admin** interfaces, authentication 
 ## 🎬 Demo
 
 <p align="center">
-  <video src="[https://github.com/user-attachments/assets/XXXXX/video.mp4](https://github.com/user-attachments/assets/90f5e5f5-116d-44a1-a25b-0b8d81b78a40)"
-    width="100%" controls>
+  <video src="https://github.com/user-attachments/assets/d1c81fae-78d7-4f3a-b3a1-18e6c8e018b0"
+         width="100%" 
+         controls>
   </video>
 </p>
 
