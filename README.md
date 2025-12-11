@@ -7,7 +7,12 @@ The application includes both **User** and **Admin** interfaces, authentication 
 
 ## 🎬 Demo
 
-![haveit_app_gif](https://github.com/user-attachments/assets/9b974064-1ede-4d5f-9877-b7472737c1d7)
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/XXXXX/video.mp4"
+         width="100%" 
+         controls>
+  </video>
+</p>
 
 ---
 
