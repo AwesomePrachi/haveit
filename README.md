@@ -7,12 +7,10 @@ The application includes both **User** and **Admin** interfaces, authentication 
 
 ## 🎬 Demo
 
-<p align="center">
-  <video src="https://github.com/user-attachments/assets/XXXXX/video.mp4"
-         width="100%" 
-         controls>
+
+  <video src="[https://github.com/user-attachments/assets/XXXXX/video.mp4](https://github.com/user-attachments/assets/90f5e5f5-116d-44a1-a25b-0b8d81b78a40)"
   </video>
-</p>
+
 
 ---
 
