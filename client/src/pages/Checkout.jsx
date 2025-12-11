@@ -10,6 +10,9 @@ import axiosToastError from '../utils/axiosToastError'
 import Axios from '../utils/Axios'
 import SummaryApi from '../config/SummaryApi'
 import toast from 'react-hot-toast'
+import { BsCreditCardFill } from "react-icons/bs";
+import rupee from '../assets/rupee.png'
+import { IoIosArrowForward } from "react-icons/io";
 import { stripePromise } from '../config/stripe'
 
 
@@ -78,7 +81,7 @@ const Checkout = () => {
       // stripe.redirectToCheckout({ sessionId: responseData.id });
 
       window.location.href = responseData.url;
-      
+
       fetchCartItems()
       fetchOrders()
 
@@ -135,7 +138,14 @@ const Checkout = () => {
             <h3 className='font-semibold'>Bill details</h3>
             <div className='flex gap-4 justify-between ml-1'>
               <p className='flex flex-row gap-1 mt-1 text-sm'><span className='mt-1'><RiFileList2Fill /></span>Items total</p>
-              <p className='flex items-center gap-2 mt-1 text-sm font-semibold'><span className='line-through text-neutral-500'>{formatRupee(actualTotalPrice)}</span><span>{formatRupee(totalPrice)}</span></p>
+              <p className='flex items-center gap-2 mt-1 text-sm font-semibold'>
+                <span className='line-through text-neutral-500'>
+                  {actualTotalPrice !== totalPrice && (
+                    <div>{formatRupee(actualTotalPrice)}</div>
+                  )
+                  }
+                </span>
+                <span>{formatRupee(totalPrice)}</span></p>
             </div>
             <div className='flex gap-4 justify-between ml-1'>
               <p className='flex flex-row gap-1 mt-1 text-sm'><span className='mt-1'><MdOutlineProductionQuantityLimits /></span>Quantity total</p>
@@ -151,13 +161,20 @@ const Checkout = () => {
             </div>
           </div>
 
-          <div className='w-full flex flex-col gap-5'>
-            <p className='lg:text-xl text-lg font-bold lg:mt-10 mt-6'>Select Payment Method</p>
-            <button className='py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-semibold' onClick={handleOnlinePayment}>Online Payment</button>
-            {/* <button className='py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-semibold' onClick={handleOnlinePayment}>Add credit or debit cards</button>
-            <button className='py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-semibold' onClick={handleOnlinePayment}>Netbanking</button>
-            <button className='py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-semibold' onClick={handleOnlinePayment}>UPI ID</button> */}
-            <button className='py-2 px-4 border-2 border-green-600 font-semibold text-green-600 hover:bg-green-600 hover:text-white' onClick={handleCashOnDelivery}>Cash on Delivery</button>
+          <div className='w-full flex flex-col'>
+            <p className='lg:text-xl text-lg font-bold lg:mt-10 mt-6 mb-5'>Select Payment Method</p>
+            <button className='py-4 px-4 flex items-center gap-5 border-t border-b border-gray-300 font-semibold' onClick={handleOnlinePayment}>
+              <BsCreditCardFill size={19} className='text-deepBlue' />
+              Credit/Debit/ATM Card
+              <IoIosArrowForward size={18} className='ml-auto text-deepBlue' />
+            </button>
+            <button className='py-4 px-4 flex items-center gap-5 border-b border-gray-300 font-semibold' onClick={handleCashOnDelivery}>
+              {/* <BsCurrencyRupee size={20} className='text-deepBlue border border-deepBlue' />  */}
+              <img src={rupee} width={24} alt="" />
+              Cash on Delivery
+              <IoIosArrowForward size={18} className='ml-auto text-deepBlue' />
+            </button>
+
           </div>
 
         </div>

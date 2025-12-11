@@ -17,7 +17,7 @@ const CartItem = ({ close }) => {
   const cartItems = useSelector(state => state.cart.cartItems)
   const user = useSelector((state) => state.user)
   const navigate = useNavigate()
-  
+
   const redirectToCheckoutPage = () => {
     if (user?._id) {
       navigate("/checkout")
@@ -95,7 +95,14 @@ const CartItem = ({ close }) => {
                   <h3 className='font-bold'>Bill details</h3>
                   <div className='flex gap-4 justify-between ml-1'>
                     <p className='flex flex-row gap-1 mt-1 text-sm'><span className='mt-1'><RiFileList2Fill /></span>Items total</p>
-                    <p className='flex items-center gap-2 mt-1 text-sm font-semibold'>{formatRupee(totalPrice)}</p>
+                    <p className='flex items-center gap-2 mt-1 text-sm font-semibold'>
+                      <span className='line-through text-neutral-500'>
+                        {actualTotalPrice !== totalPrice && (
+                          <div>{formatRupee(actualTotalPrice)}</div>
+                        )
+                        }
+                      </span>
+                      {formatRupee(totalPrice)}</p>
                   </div>
                   <div className='flex gap-4 justify-between ml-1'>
                     <p className='flex flex-row gap-1 mt-1 text-sm'><span className='mt-1'><MdOutlineProductionQuantityLimits /></span>Quantity total</p>

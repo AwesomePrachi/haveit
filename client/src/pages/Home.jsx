@@ -74,7 +74,7 @@ const Home = () => {
 
         {/* Displaying products by category */}
         {
-          allCategories.slice(1, 7).map((cat, index) => (
+          allCategories.slice(1,9).map((cat, index) => (
             <ProductsByCategory key={cat?._id+"ProductsByCat"} id={cat._id} name={cat.name}/>
           ))
         }

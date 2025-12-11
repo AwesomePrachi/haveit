@@ -1,16 +1,129 @@
-# React + Vite
+# 🛒 Haveit – Full-Stack Grocery & E-Commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Haveit is a full-stack Blinkit-style grocery delivery web application that enables users to browse products, manage their carts, place orders, make online payments using Stripe Checkout, and order via Cash on Delivery.  
+The application includes both **User** and **Admin** interfaces, authentication flows, product/category management, order management, and responsive mobile layouts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎬 Demo
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### User Features
+- User Registration & Login (JWT Authentication)  
+- Forgot Password & Reset Password via OTP  
+- Browse Categories & Subcategories  
+- Product Listing & Product Details Page  
+- Add to Cart + Update Quantities  
+- Mobile-Friendly Cart & User Menu  
+- Checkout with Address Selection  
+- Two Payment Methods:
+  - **Stripe Checkout (Online Payment)**
+  - **Cash on Delivery**
+- Order Tracking & Order History  
+- Profile & Address Management  
+
+### Admin Features
+- Admin Role-Based Access  
+- Category & Subcategory Management  
+- Product Upload / Update with Cloudinary  
+- Product Listing & Image Management  
+- Order Dashboard  
+- Automatic order creation via **Stripe Webhooks**  
+
+---
+
+## 💳 Payment Integration
+
+### Stripe Checkout Flow
+- Secure Stripe Checkout integration  
+- Redirects on success → `/success?session_id=...`  
+- Redirects on failure → `/cancel-order`  
+- Backend verifies payment using:
+  - Stripe Webhooks (server-side)
+  - Client verification (UX)  
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend:** React, React Router DOM, Redux Toolkit, TailwindCSS, Axios, Sweet Alert2, Stripe.js   
+- **Backend:**  Node.js, Express.js, MongoDB, Mongoose, Resend API, Stripe API, Cloudinary, JWT Authentication
+- **Other:** dotenv for environment variables, CORS
+
+---
+
+## 📦 Installation & Local Setup
+
+### 1️. Clone Repository
+```bash
+git clone https://github.com/AwesomePrachi/haveit.git
+cd haveit
+```
+
+### 2. Backend Setup
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file in the `/` directory:
+```env
+PORT=8000
+MONGODB_URI=your_mongodb_url
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_CLOUD=xxxx
+CLOUDINARY_API_KEY=xxxx
+CLOUDINARY_API_SECRET=xxxx
+
+STRIPE_SECRET_KEY=sk_test_****
+STRIPE_ENDPOINT_WEBHOOK_SECRET_KEY=whsec_****
+FRONTEND_URL=http://localhost:5173
+```
+
+Start the backend server:
+```bash
+npm run dev
+```
+Server runs at [http://localhost:8000](http://localhost:8000)
+
+---
+
+### 3. Frontend Setup
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Add .env file
+```bash
+VITE_API_URL=http://localhost:8000
+```
+
+Start the frontend:
+```bash
+npm run dev
+```
+App runs at [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🚀 Deployment Setup
+
+- **Frontend (Vercel)**
+- **Backend (Render)**
+
+---
+
+## License
+
+[MIT](./LICENSE)
+
+---
+
+⭐ If you like this project, consider giving it a star on GitHub!
